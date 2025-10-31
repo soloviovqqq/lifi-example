@@ -1,7 +1,7 @@
 import {ChangeTheme} from "@/components/change-theme";
 import {Alert, AlertDescription} from "@/components/ui/alert";
 import {Widget} from "@/components/widget";
-import {AlertCircleIcon, CheckCircle2Icon, Lightbulb} from "lucide-react";
+import {AlertCircleIcon, Footprints, Lightbulb, TriangleAlert} from "lucide-react";
 import {AlertTitle} from "@mui/material";
 
 export default function Home() {
@@ -9,11 +9,23 @@ export default function Home() {
     <div className="flex flex-col gap-4 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <div className='max-w-xl space-y-4'>
         <Alert>
-          <CheckCircle2Icon/>
+          <TriangleAlert/>
+          <AlertTitle>Important note</AlertTitle>
+          <AlertDescription>
+            You dont need to connect any wallet to reproduce this issue.
+          </AlertDescription>
+        </Alert>
+
+        <Alert>
+          <Footprints />
           <AlertTitle>Steps to reproduce</AlertTitle>
           <AlertDescription>
+
             <ul className="list-inside list-disc text-sm">
-              <li>Set the theme to light</li>
+              <li>Open LI FI drawer (click on the button below)</li>
+              <li>In LI FI drawer settings change appearance to dark</li>
+              <li>Close LI FI drawer</li>
+              <li>Set the nextjs theme to light</li>
               <li>Refresh the page</li>
               <li>When the component {'<Widget/>'} is mounted, the {'<html>'} tag is modified (if comment component {'<Widget/>'} everything works properly)</li>
             </ul>
@@ -38,7 +50,7 @@ export default function Home() {
               <li>Framework: Next.js 16</li>
               <li>Theme library: next-themes</li>
               <li>Widget version: @lifi/widget:^3.34.0</li>
-              <li>Browser: Chrome</li>
+              <li>Browser: Chrome / Safari</li>
               <li>OS: macOS</li>
             </ul>
           </AlertDescription>
