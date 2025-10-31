@@ -51,7 +51,7 @@ export default function Home() {
               <li>Theme library: next-themes</li>
               <li>Widget version: @lifi/widget:^3.34.0</li>
               <li>Browser: Chrome / Safari</li>
-              <li>OS: macOS</li>
+              <li>OS: macOS / Windows</li>
             </ul>
           </AlertDescription>
         </Alert>
